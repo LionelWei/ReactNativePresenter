@@ -21,16 +21,63 @@
 			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
 			document.getElementsByTagName( 'head' )[0].appendChild( link );
 		</script>
+		<style type="text/css">
+			.title {
+				color: rgb(0, 164, 221);
+			}
+			.text {
+				color: white;
+			}
+		</style>
 	</head>
 	<body>
 		<div class="reveal">
 			<div class="slides">
-				<section>Slide 1</section>
-				<section>Single Horizontal Slide</section>
-        <section>
-            <section>Vertical Slide 1</section>
-            <section>Vertical Slide 2</section>
-        </section>
+				<section>
+					<p>移动跨平台开发</p>
+					<p class="title">REACT NATIVE</p>
+				</section>
+				<section data-transition="slides" data-markdown style="text-align: left">
+			    <script type="text/template">
+### CONTENTS <!-- .element: style="color: rgb(0, 164, 221)" -->
+- 演示
+- 为什么用React Native?
+- 画界面的重要性
+- 组件化
+- 命令式 vs. 声明式
+- 热更新
+- JS与Native的交互
+<aside class="notes">
+  这里是注释。
+</aside>
+				</script>
+				</section>
+				<section>
+					<p class="title">演示</p>
+				</section>
+<section data-markdown data-separator="---" data-separator-vertical="--" data-separator-notes="^Note:">
+  <script type="text/template">
+    # 主题1
+    - 主题1-内容1
+    - 主题1-内容2
+    Note:
+    hello world
+    --
+    ## 主题1-内容1
+    内容1-细节1
+    --
+    ## 主题1-内容2
+    内容1-细节2
+    ---
+    # 主题2
+  </script>
+</section>
+		        <section>
+		            <section>
+		            Vertical Slide 1
+		            </section>
+		            <section>Vertical Slide 2</section>
+		        </section>
 				<section data-markdown>
 			    <script type="text/template">
 ## Page title
@@ -44,6 +91,11 @@ printf("hello world");
 ## hellow
 			    </script>
 				</section>
+<section>
+    <span class="fragment fade-in">
+        <span class="fragment fade-out">I'll fade in, then out</span>
+    </span>
+</section>
 			</div>
 		</div>
 
