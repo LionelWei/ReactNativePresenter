@@ -25,6 +25,9 @@
 			.title {
 				color: rgb(0, 164, 221);
 			}
+			.white {
+				color: white;
+			}
 			.text {
 				color: white;
 			}
@@ -33,25 +36,13 @@
 	<body>
 		<div class="reveal">
 			<div class="slides">
+
+<!-- slide正文 -->
 <section data-transition="concave">
 	<p>移动跨平台开发</p>
 	<p class="title fragment fade-down">
 		REACT NATIVE
 	</p>
-</section>
-<section data-transition="concave" data-markdown style="text-align: left">
-<script type="text/template">
-	### CONTENTS <!-- .element: style="color: rgb(0, 164, 221)" -->
-	- 为什么用React Native?
-	- 演示
-	- 热加载
-	- 命令式 or 声明式
-	- JS与Native的交互
-	- 热更新 / 果爹发飙
-	<aside class="notes">
-	  这里是注释。
-	</aside>
-</script>
 </section>
 <section data-markdown style="text-align: left">
 	<script type="text/template">
@@ -117,7 +108,7 @@
 			- 使用C++实现非界面部分, 如[<u>微信Mars</u>](https://github.com/Tencent/mars)
 			- 使用 OpenGL 来绘制界面, 常见于游戏中
 			- 基于C++的跨平台UI库, 如QT
-		- Xamarin `['zæmərɪn]`
+		- Xamarin
 			- C# 开发 Android/iOS
 		- RoboVM
 			- Java 转为 iOS
@@ -138,20 +129,71 @@
 		NOTE:
 		游戏引擎大多都能跨平台，为了提升开发效率，不少引擎还内嵌了对脚本支持
 		不同平台下画UI组件, 这个十几年前的 SWT 就是这么做的。Facebook 的 iOS 团队中不少成员是来自 Apple 的，React Native 的官方视频中说它能做到 App 内实时更新，其实这是 Apple 明文禁止的，要做得低调。评论中有人提到 Apple 居然在 iOS 8.2 中改条款了，可以下载执行 JavaScript，而且 UIKit 的作者都觉得 React Native 很赞. 总之得到Apple相关资源的支持.
-		--
-		<p>JavaScript性能</p>
-		<img class="fragment fade-up" src="./img/js_performance.png" width="500px" />
-		<p class="fragment fade-up">
-			JIT即时编译 对于GUI/交互式程序影响不大
-		</p>		 
-		--
-		- 非界面/基础模块用C++
-		- 界面用JSVM系: React Native / Weex
 	</script>
 </section>
+<section data-transition="slides">
+	<p>JavaScript性能</p>
+	<img class="fragment fade-up" src="./img/js_performance.png" width="500px" />
+	<p class="fragment fade-up">
+		JIT即时编译 对于GUI/交互式程序影响不大
+	</p>	
+</section>
+<section data-markdown style="text-align: left">
+	<script type="text/template">
+	### 解决方案
+	- 非界面/基础模块用C++
+	- 界面用JSVM系: React Native / Weex
+	</script>
+</section>
+<section>
+	<section>
+		<div class="title">
+			<p>命令式编程</p>		
+			<p class="white">vs</p>		
+			<p>声明式编程</p>		
+		</div>		
+	</section>
+	<section>
+		<p>以LinearLayout+Button为例 JAVA代码 vs XML</p>
+	</section>
+	<section>
+		引出RN的hello world
+	</section>
+	<section>
+		属性&props共同触发界面的变化
+	</section>
+	<section>
+		填坑之一: 画面卡顿 过于频繁的重绘页面 -> 属性变化导致Re-Render -> 只在某些情况下触发渲染 或 setNativeProps
+	</section>
+</section>
+<section>
+	JS与Native交互原理简介
+</section>
+<section>
+	<section>
+		热更新
+		CodePush
+		参照<React Native入门与实践>写一下
+	</section>
+	<section>
+		<p>果爹发飙</p>
+		<p>禁止不经提交版本而改变应用的行为或功能. -> 禁止热更新? -> 使用JSPatch/rollout相关应用被警告</p>
+	</section>
+	<section>
+		<p>热更新很方便</p>
+		<p>RN最大的优势不是热更新, 而是其跨平台技术</p>
+		<p>没有热更新, 照样可以上RN</p>
+	</section>
+</section>
+<section>
+<p class="title">结论</p>
+<p>技术栈要与时俱进</p>
+<p>不仅要有深度, 还要有广度</p>
+<p>来吧, 一起RN! +盖章特效</p>
+</section>
 
-			</div>
-		</div>
+	</div>
+</div>
 
 		<script src="lib/js/head.min.js"></script>
 		<script src="js/reveal.js"></script>
