@@ -56,7 +56,7 @@
 </section>
 <section data-markdown style="text-align: left">
 	<script type="text/template">
-		#### 为什么用React Native <!-- .element: style="color: rgb(0, 164, 221)" -->
+		### 为什么用 React Native <!-- .element: style="color: rgb(0, 164, 221)" -->
 		- 跨平台开发
 			- 一次编写, 处处运行 <!-- .element: style="font-size: 0.8em; color: #888888" -->
 			- 降低开发成本 <!-- .element: style="font-size: 0.8em; color: #888888" -->
@@ -66,6 +66,7 @@
 		- 渲染速度快
 			- Virtual DOM <!-- .element: style="font-size: 0.8em; color: #888888" -->
 			- 原生渲染 <!-- .element: style="font-size: 0.8em; color: #888888" -->
+		- 提升 Android/iOS 开发技能
 	</script>
 </section>
 <section>
@@ -115,7 +116,7 @@
 		### 编译流
 		- 将某个语言编译为二进制文件，生成动态库或打包成 apk/ipa/xap 文件
 		- C/C++
-			- 使用C++实现非界面部分, 如[<u>微信Mars</u>](https://github.com/Tencent/mars)
+			- 使用C++实现非界面部分, 如 <img src="./img/wechat-logo.png" height="50px" style="position: relative; top: 10px; border: none; margin: 0; background-color: transparent;"/>[ <u>Mars</u>](https://github.com/Tencent/mars)
 			- 使用 OpenGL 来绘制界面, 常见于游戏中
 			- 基于C++的跨平台UI库, 如QT
 		- Xamarin
@@ -133,9 +134,8 @@
 		- Unity3D/Cocos2d-js
 		- Adobe AIR
 		- NativeScript
-		- React Native
-		- Weex
-		...
+		- <img src="./img/react-native-logo.svg" height="60px" style="position: relative; top: 10px; border: none; margin: 0; background-color: transparent;"/><font style="color: rgb(0, 216, 255);"> React Native</font>
+		- <img src="./img/weex-logo.png" height="60px" style="position: relative; top: 10px; border: none; margin: 0; background-color: transparent;"/><font style="color: rgb(0, 180, 255);"> Weex</font>
 		NOTE:
 		游戏引擎大多都能跨平台，为了提升开发效率，不少引擎还内嵌了对脚本支持
 		不同平台下画UI组件, 这个十几年前的 SWT 就是这么做的。Facebook 的 iOS 团队中不少成员是来自 Apple 的，React Native 的官方视频中说它能做到 App 内实时更新，其实这是 Apple 明文禁止的，要做得低调。评论中有人提到 Apple 居然在 iOS 8.2 中改条款了，可以下载执行 JavaScript，而且 UIKit 的作者都觉得 React Native 很赞. 总之得到Apple相关资源的支持.
@@ -145,7 +145,7 @@
 	<p>JavaScript性能</p>
 	<img class="fragment fade-up" src="./img/js_performance.png" width="500px" />
 	<p class="fragment fade-up">
-		JIT即时编译 对于GUI/交互式程序影响不大
+		引入JIT即时编译后, 性能大幅提升
 	</p>
 </section>
 <section data-markdown style="text-align: left">
@@ -167,7 +167,6 @@
 	<section class="clearfix">
 		<p class="blue-text" style="text-align: left; font-size: 0.8em">命令式</p>
 		<pre style="font-size: 0.5em; margin: 0"><code>LinearLayout ll = new LinearLayout(this);
-ll.setOrientation(LinearLayout.VERTICAL);
 TextView tv = new TextView(this);
 tv.setText("hello world");
 ll.addView(tv, new LinearLayout.LayoutParams(
@@ -182,7 +181,7 @@ setContentView(ll);</code></pre>
     &lt;TextView&gt;
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!" /&gt;
+        android:text="hello world!" /&gt;
 &lt;/LinearLayout&gt;</code></pre>
 		<div class="fragment fade-in">
 		    <div class="fragment fade-out">
@@ -192,46 +191,88 @@ setContentView(ll);</code></pre>
 	    </div>
 	</section>
 	<section>
-		https://code.facebook.com/posts/895897210527114/dive-into-react-native-performance/
+		<p>Hello World</p>
+		<iframe width="800px" height="400px" name="rndemo" frameborder=0 src="http://dabbott.github.io/react-native-web-player/#code=import%20React%2C%20%7B%20Component%20%7D%20from%20'react'%3B%0Aimport%20%7B%20AppRegistry%2C%20Text%20%7D%20from%20'react-native'%3B%0A%0Aclass%20HelloWorldApp%20extends%20Component%20%7B%0A%20%20render()%20%7B%0A%20%20%20%20return%20(%0A%20%20%20%20%20%20%3CText%3E%0A%20%20%20%20%20%20%20%20hello%20world%0A%20%20%20%20%20%20%3C%2FText%3E%0A%20%20%20%20)%3B%0A%20%20%7D%0A%7D%0A%0AAppRegistry.registerComponent('HelloWorldApp'%2C%20()%20%3D%3E%20HelloWorldApp)%3B"></iframe>
 	</section>
 	<section>
-		引出RN的hello world
+		<p>声明式 Demo</p>
+		<iframe width="800px" height="460px" name="rndemo" frameborder=0 src="http://dabbott.github.io/react-native-web-player/#code=import%20React%2C%20%7B%20Component%20%7D%20from%20'react'%3B%0Aimport%20%7B%20AppRegistry%2C%20Text%2C%20TouchableOpacity%20%7D%20from%20'react-native'%3B%0Aclass%20HelloWorldApp%20extends%20Component%20%7B%0A%20%20state%20%3D%20%7B%0A%20%20%20%20description%3A%20'hello%20world'%2C%0A%20%20%7D%0A%20%20render()%20%7B%0A%20%20%20%20return%20(%0A%20%20%20%20%20%20%3CTouchableOpacity%20onPress%3D%7Bthis.press%7D%3E%0A%20%20%20%20%20%20%20%20%3CText%3E%0A%20%20%20%20%20%20%20%20%20%20%7Bthis.state.description%7D%0A%20%20%20%20%20%20%20%20%3C%2FText%3E%0A%20%20%20%20%20%20%3C%2FTouchableOpacity%3E%0A%20%20%20%20)%3B%0A%20%20%7D%0A%20%20press%20%3D%20()%20%3D%3E%20%7B%0A%20%20%20%20this.setState(%7B%0A%20%20%20%20%20%20description%3A%20'%E4%BD%A0%E5%A5%BD%2C%20%E4%B8%96%E7%95%8C'%2C%0A%20%20%20%20%7D)%0A%20%20%7D%0A%7D%0AAppRegistry.registerComponent('HelloWorldApp'%2C%20()%20%3D%3E%20HelloWorldApp)%3B"></iframe>
+		<p class="fragment fade-up" style="margin: 0 100px; font-size: 0.8em">
+			界面随状态的变化而变化<span class="fragment fade-right title"> => Android DataBinding</span></p>
+		<aside class="notes">
+			由此可以联想到Android DataBinding, 所以我们知道数据绑定这种所谓MVVM的模式不是凭空出现的, 而是借鉴了其他平台的特点. 我觉得主要是网页, 如果我们主动去了解这些知识, 就能较好的把握方向, 不至于等到新技术出来一头雾水, 跟不上趟.
+		</aside>
 	</section>
-	<section>
-		属性&props共同触发界面的变化
-	</section>
-	<section>
-		填坑之一: 画面卡顿 过于频繁的重绘页面 -> 属性变化导致Re-Render -> 只在某些情况下触发渲染 或 setNativeProps
+	<section data-markdown style="text-align: left">
+		<script type="text/template">
+		### 遇到各种坑...
+		- 动画卡顿
+		- 反应迟钝
+		- 数据如何存储
+		- 事件无法传递
+		- ...
+		<div class="fragment fade-right title" style="position: absolute; right: 150px; bottom: 100px; padding: 10px; font-size: 0.8em; border: dashed 1px rgb(0, 164, 221)">
+			<p>1) 只要必要时重新渲染</p>
+			<p>2) 直接设置控件样式</p>
+			<p>3) 引入Redux...</p>
+		</div>
+		</script>
 	</section>
 </section>
 <section>
-	JS与Native交互原理简介
+	<section>
+		<p class="title">JS与Native交互原理简介</p>		
+	</section>
+	<section>
+		<p>Android WebView</p>
+		<p style="text-align: left">Java调JS</p>
+		<pre style="font-size: 0.5em; margin: 0"><code>webview.loadUrl("javascript: alert('haha')");</code></pre>
+		<p style="text-align: left">JS调Java</p>
+		<pre style="font-size: 0.5em; margin: 0"><code>webview.addJavascriptInterface(new Object() {
+    @JavascriptInterface
+    void foo() {
+        Log.e("Demo", "foo");
+    }
+}, "bridge");
+
+webview.loadUrl("javascript: window.bridge.foo()");
+// 链接跳转: shouldOverrideUrlLoading()
+</code></pre>
+	</section>
+	<section>
+		<img src="./img/rnbridge.svg" style="background-color: white">
+	</section>
 </section>
 <section>
 	<section>
-		热更新
-		CodePush
-		<aside>
+		<p class="title">热更新</p>
+		<aside class="notes">
 			Web开发中, JS修改完逻辑直接在浏览器上刷新就能开到效果. 这是因为JS是一门动态语言, 不需要事先编译. 浏览器每次刷新都动态地从服务端加载JS文件. 当服务端没有更新时, 浏览器会从缓存当中去取JS文件. RN的动态更新时同样的思路, 所有JS代码会打包成一个jsbundle. 当需要更新时, 从远程服务器上下载这个文件, 并重新加载, 就可以完成动态更新而不需发版本.
+			禁止不经提交版本而改变应用的行为或功能. -> 禁止热更新? -> 使用JSPatch/rollout相关应用被警告
 		</aside>
 	</section>
 	<section>
-		<p>果爹发飙</p>
-		<p>禁止不经提交版本而改变应用的行为或功能. -> 禁止热更新? -> 使用JSPatch/rollout相关应用被警告</p>
+		<p style="color: red">果爹发飙</p>
+		<img class="fragment fade-up" src="./img/apple-warning.png">
 	</section>
-	<section>
-		<p>热更新很方便</p>
-		<p>RN最大的优势不是热更新, 而是其跨平台技术</p>
-		<p>没有热更新, 照样可以上RN</p>
+	<section data-markdown style="text-align: left">
+		<script type="text/template">
+		- 热更新很方便
+		- RN最大的优势不是热更新, 而是其跨平台技术
+		- 没有热更新, 照样可以上RN
+		</script>
 	</section>
+</section>
+<section data-markdown style="text-align: left">
+	<script type="text/template">
+		### 结论 <!-- .element: style="color: rgb(0, 164, 221)" -->
+		- 技术栈要与时俱进
+		- 不仅要有深度, 还要有广度
+	</script>
 </section>
 <section>
-<p class="title">结论</p>
-<p>技术栈要与时俱进</p>
-<p>不仅要有深度, 还要有广度</p>
-<p>来吧, 一起RN! +盖章特效</p>
+	<p class="title">结束</p>
 </section>
-
 	</div>
 </div>
 
@@ -251,7 +292,7 @@ setContentView(ll);</code></pre>
 					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
 				]
 			});
-			Reveal.configure({ slideNumber: true });
+			// Reveal.configure({ slideNumber: true });
 		</script>
 <!-- 		<a class="fork-reveal" style="display: block;" href="https://github.com/hakimel/reveal.js"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://github-camo.global.ssl.fastly.net/365986a132ccd6a44c23a9169022c0b5c890c387/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f7265645f6161303030302e706e67" alt="Fork reveal.js on GitHub"></a>
 		<script>
