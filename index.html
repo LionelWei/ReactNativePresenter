@@ -31,6 +31,16 @@
 			.text {
 				color: white;
 			}
+			.blue-text {
+				color: rgb(0, 164, 221)
+			}
+			.clearfix:after {
+				content: ".";
+				display: block;
+				height: 0;
+				visibility: hidden;
+				clear: both;
+			}
 		</style>
 	</head>
 	<body>
@@ -84,18 +94,18 @@
 		- 内嵌WebView
 		- PhoneGap/Cordova
 		<p class="fragment fade-up" style="color: rgb(0, 164, 221)">
-		性能慢?			
+		性能慢?
 		</p>
 		NOTE:
-		Hybrid 技术，它基于 Web 相关技术来实现界面及功能. 
-		槽点: 性能慢 并不是DOM慢, 而是渲染慢: 1. 浏览器优化差 -> JS解析慢(V8之后又很大改善) 2. CSS过于灵活复杂 3. DOM暴露出来的接口有限, 难以优化 
+		Hybrid 技术，它基于 Web 相关技术来实现界面及功能.
+		槽点: 性能慢 并不是DOM慢, 而是渲染慢: 1. 浏览器优化差 -> JS解析慢(V8之后又很大改善) 2. CSS过于灵活复杂 3. DOM暴露出来的接口有限, 难以优化
 		--
 		### 代码转换流
 		- 将某种语言转成 Objective-C、Java 或 C#，然后使用不同平台下的官方工具来开发
 		- Java 转 Objective-C
 		- Objective-C 转 Java
 		- Java 转 C#
-		- ... 
+		- ...
 		<img class="fragment fade-up"
 			style="position: absolute; right: 150px; bottom: 0px;"
 			src="./img/mengbi1.png" width="150px" />
@@ -136,7 +146,7 @@
 	<img class="fragment fade-up" src="./img/js_performance.png" width="500px" />
 	<p class="fragment fade-up">
 		JIT即时编译 对于GUI/交互式程序影响不大
-	</p>	
+	</p>
 </section>
 <section data-markdown style="text-align: left">
 	<script type="text/template">
@@ -148,13 +158,41 @@
 <section>
 	<section>
 		<div class="title">
-			<p>命令式编程</p>		
-			<p class="white">vs</p>		
-			<p>声明式编程</p>		
-		</div>		
+			<p class="white">命令式编程</p>
+			<p style="color: transparent;">.........<span class="fragment fade-up" style="color: white"> => HOW</span></p>
+			<p>声明式编程</p>
+			<p style="color: transparent;">.........<span class="fragment fade-left title"> => WHAT</span></p>
+		</div>
+	</section>
+	<section class="clearfix">
+		<p class="blue-text" style="text-align: left; font-size: 0.8em">命令式</p>
+		<pre style="font-size: 0.5em; margin: 0"><code>LinearLayout ll = new LinearLayout(this);
+ll.setOrientation(LinearLayout.VERTICAL);
+TextView tv = new TextView(this);
+tv.setText("hello world");
+ll.addView(tv, new LinearLayout.LayoutParams(
+        LinearLayout.LayoutParams.WRAP_CONTENT,
+        LinearLayout.LayoutParams.WRAP_CONTENT));
+setContentView(ll);</code></pre>
+		<p class="blue-text" style="text-align: left; font-size: 0.8em">声明式</p>
+		<pre style="font-size: 0.5em; margin: 0"><code>&lt;LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    &lt;TextView&gt;
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hello World!" /&gt;
+&lt;/LinearLayout&gt;</code></pre>
+		<div class="fragment fade-in">
+		    <div class="fragment fade-out">
+		    	<img src="./img/hello-world-screenshot1.png" alt="hello-world-screenshot1" 
+				style="position: fixed; right: 150px; bottom: 50px; width: 350px; border: none;">
+		    </div>
+	    </div>
 	</section>
 	<section>
-		<p>以LinearLayout+Button为例 JAVA代码 vs XML</p>
+		https://code.facebook.com/posts/895897210527114/dive-into-react-native-performance/
 	</section>
 	<section>
 		引出RN的hello world
@@ -173,7 +211,9 @@
 	<section>
 		热更新
 		CodePush
-		参照<React Native入门与实践>写一下
+		<aside>
+			Web开发中, JS修改完逻辑直接在浏览器上刷新就能开到效果. 这是因为JS是一门动态语言, 不需要事先编译. 浏览器每次刷新都动态地从服务端加载JS文件. 当服务端没有更新时, 浏览器会从缓存当中去取JS文件. RN的动态更新时同样的思路, 所有JS代码会打包成一个jsbundle. 当需要更新时, 从远程服务器上下载这个文件, 并重新加载, 就可以完成动态更新而不需发版本.
+		</aside>
 	</section>
 	<section>
 		<p>果爹发飙</p>
@@ -213,5 +253,12 @@
 			});
 			Reveal.configure({ slideNumber: true });
 		</script>
+<!-- 		<a class="fork-reveal" style="display: block;" href="https://github.com/hakimel/reveal.js"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://github-camo.global.ssl.fastly.net/365986a132ccd6a44c23a9169022c0b5c890c387/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f7265645f6161303030302e706e67" alt="Fork reveal.js on GitHub"></a>
+		<script>
+			if( !navigator.userAgent.match( /(iphone|android)/gi ) && !!document.querySelector ) {
+				document.querySelector( '.fork-reveal' ).style.display = 'block';
+			}
+		</script>
+ -->
 	</body>
 </html>
