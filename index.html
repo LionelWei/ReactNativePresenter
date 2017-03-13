@@ -58,14 +58,14 @@
 	<script type="text/template">
 		### 为什么用 React Native <!-- .element: style="color: rgb(0, 164, 221)" -->
 		- 跨平台开发
-			- 一次编写, 处处运行 <!-- .element: style="font-size: 0.8em; color: #888888" -->
 			- 降低开发成本 <!-- .element: style="font-size: 0.8em; color: #888888" -->
+
 		- 开发效率高
-			- 画界面很灵活 <!-- .element: style="font-size: 0.8em; color: #888888" -->
 			- 调试方便 <!-- .element: style="font-size: 0.8em; color: #888888" -->
+
 		- 渲染速度快
-			- Virtual DOM <!-- .element: style="font-size: 0.8em; color: #888888" -->
-			- 原生渲染 <!-- .element: style="font-size: 0.8em; color: #888888" -->
+			- Virtual DOM / 原生渲染<!-- .element: style="font-size: 0.8em; color: #888888" -->
+
 		- 提升 Android/iOS 开发技能
 	</script>
 </section>
@@ -116,7 +116,7 @@
 		### 编译流
 		- 将某个语言编译为二进制文件，生成动态库或打包成 apk/ipa/xap 文件
 		- C/C++
-			- 使用C++实现非界面部分, 如 <img src="./img/wechat-logo.png" height="50px" style="position: relative; top: 10px; border: none; margin: 0; background-color: transparent;"/>[ <u>Mars</u>](https://github.com/Tencent/mars)
+			- 使用C++实现非界面部分, 如 <img src="./img/wechat-logo.png" height="50px" style="position: relative; top: 10px; border: none; margin: 0; background-color: transparent;"/><font style="color: rgb(0, 205, 15);"> Mars</font>
 			- 使用 OpenGL 来绘制界面, 常见于游戏中
 			- 基于C++的跨平台UI库, 如QT
 		- Xamarin
@@ -152,6 +152,7 @@
 	<script type="text/template">
 	### 解决方案
 	- 非界面/基础模块用C++
+	
 	- 界面用JSVM系: React Native / Weex
 	</script>
 </section>
@@ -258,7 +259,9 @@ webview.loadUrl("javascript: window.bridge.foo()");
 	<section data-markdown style="text-align: left">
 		<script type="text/template">
 		- 热更新很方便
+
 		- RN最大的优势不是热更新, 而是其跨平台技术
+
 		- 没有热更新, 照样可以上RN
 		</script>
 	</section>
@@ -266,17 +269,18 @@ webview.loadUrl("javascript: window.bridge.foo()");
 <section data-markdown style="text-align: left">
 
 	<script type="text/template">
-		### 结论 <!-- .element: style="color: rgb(0, 164, 221)" -->
-		- 技术栈要与时俱进
-		- 不仅要有深度, 还要有广度
+	### 结论 <!-- .element: style="color: rgb(0, 164, 221)" -->
+	- 技术栈要与时俱进
 
-		<div class="fragment fade-in">
-			<div class="fragment fade-out">
-				<a style="display: block;" href="https://github.com/LionelWei/ReactNativeSlides">
-					<img style="position: fixed; top: 0; right: 0; border: none; background-color: transparent; box-shadow: none;" src="https://github-camo.global.ssl.fastly.net/365986a132ccd6a44c23a9169022c0b5c890c387/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f7265645f6161303030302e706e67" alt="Fork me on GitHub"/>
-				</a>
-			</div>
+	- 不仅要有深度, 还要有广度
+
+	<div class="fragment fade-in">
+		<div class="fragment fade-out">
+			<a style="display: block;" href="https://github.com/LionelWei/ReactNativeSlides">
+				<img style="position: fixed; top: 0; right: 0; border: none; background-color: transparent; box-shadow: none;" src="https://github-camo.global.ssl.fastly.net/365986a132ccd6a44c23a9169022c0b5c890c387/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f7265645f6161303030302e706e67" alt="Fork me on GitHub"/>
+			</a>
 		</div>
+	</div>
 	</script>
 </section>
 <section>
