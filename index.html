@@ -81,7 +81,7 @@
 		### 跨平台四大流派
 		- Web 流
 		- 代码转换流
-		- 渲染速度快
+		- 编译流
 		- 虚拟机流
 
 
@@ -151,13 +151,16 @@
 	<p class="fragment fade-up">
 		引入JIT即时编译后, 性能大幅提升
 	</p>
+	<aside class="notes">
+		2017年的飞跃指的应该是webassembly. 还是在JIT上做文章
+	</aside>
 </section>
 <section data-markdown style="text-align: left">
 	<script type="text/template">
 	### 解决方案
 	- 非界面/基础模块用C++
 	
-	- 界面用虚拟机系/JavaScript:x React Native / Weex
+	- 界面用虚拟机系/JavaScript: React Native / Weex
 	</script>
 </section>
 <section>
@@ -253,7 +256,6 @@ webview.loadUrl("javascript: window.bridge.foo()");
 		<p class="title">热更新</p>
 		<aside class="notes">
 			Web开发中, JS修改完逻辑直接在浏览器上刷新就能开到效果. 这是因为JS是一门动态语言, 不需要事先编译. 浏览器每次刷新都动态地从服务端加载JS文件. 当服务端没有更新时, 浏览器会从缓存当中去取JS文件. RN的动态更新时同样的思路, 所有JS代码会打包成一个jsbundle. 当需要更新时, 从远程服务器上下载这个文件, 并重新加载, 就可以完成动态更新而不需发版本.
-			禁止不经提交版本而改变应用的行为或功能. -> 禁止热更新? -> 使用JSPatch/rollout相关应用被警告
 		</aside>
 	</section>
 	<section>
@@ -261,6 +263,10 @@ webview.loadUrl("javascript: window.bridge.foo()");
 		<img class="fragment fade-up" src="./img/apple-warning.png">
 		<img class="fragment fade-up" style="position: absolute; top: 0; left: 0; border: none;" src="./img/apple-warning2.png">
 		<img class="fragment fade-up" style="position: absolute; top: 10; right: 0; border: none;" width="500px" src="./img/apple-warning3.png">
+		<aside class="notes">
+			禁止不经提交版本而改变应用的行为或功能. -> 禁止热更新? -> 使用JSPatch/rollout相关应用被警告
+		</aside>
+
 	</section>
 	<section data-markdown style="text-align: left">
 		<script type="text/template">
